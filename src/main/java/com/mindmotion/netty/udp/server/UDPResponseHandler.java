@@ -18,7 +18,7 @@ public class UDPResponseHandler extends SimpleChannelInboundHandler<DatagramPack
 
         String context = bytesToHexString(data);
 
-        System.out.println("服务端接收到地址@" + datagramPacket.sender().getAddress() + datagramPacket.sender().getPort() + " 数据为:" + context + " 字符串:" + new String(data, StandardCharsets.UTF_8));
+        System.out.println("服务端接收到地址@" + datagramPacket.sender().getAddress() + ":" + datagramPacket.sender().getPort() + " 数据为:" + context + " 字符串:" + new String(data, StandardCharsets.UTF_8));
 
         context = new String(data, StandardCharsets.UTF_8);
         ByteBuf byteBuf = Unpooled.copiedBuffer(context.getBytes(CharsetUtil.UTF_8));

@@ -44,6 +44,7 @@ public class NettyUDPClient {
                         Unpooled.copiedBuffer(line, CharsetUtil.UTF_8),
                         new InetSocketAddress("127.0.0.1", 9999))).sync();
             }
+            System.exit(0);
         }
         finally {
             workGroup.shutdownGracefully();
